@@ -11,8 +11,8 @@ namespace IO流
     {
         static void Main(string[] args)
         {
-           // string path = "D:\\test1";
-         
+            // string path = "D:\\test1";
+
 
             //try
             //{
@@ -34,7 +34,7 @@ namespace IO流
             //{
 
             //    Console.WriteLine(e.Message);
-                    
+
             //}
 
             ////删除目录空目录
@@ -44,6 +44,20 @@ namespace IO流
             ////查看目录
             //Console.WriteLine(Directory.GetCurrentDirectory());
 
+
+            string path = @"D:\\test1";
+            FileInfo fi = new FileInfo(path);
+            //第一种方法，使用FileInfo中的 Exists属性
+            if (fi.Exists)
+            {
+                Console.WriteLine("文件已存在！");
+            }
+
+            //使用静态类file中的Exists方法
+            if (File.Exists(path))
+            {
+                Console.WriteLine("文件已存在！");
+            }
 
             Console.ReadKey();
         }
